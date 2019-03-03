@@ -1,0 +1,19 @@
+{
+  "name": "watchdog",
+  "version": "1.0.0",
+  "description": "monitor cpu load",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "jquery": "^3.3.1",
+    "ws": "^6.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Leo Ahnn",
+  "license": "ISC"
+}
