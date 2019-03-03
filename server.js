@@ -26,7 +26,13 @@ wss.on('connection', (ws) => {
     });
 })
 
+// setup static files
+app.use(express.static('assets'))
 
-server.listen(8080, () => {
-    console.log(`Server started on port ${server.address().port}`);
+app.get('/', function(req, res){
+    res.sendFile('index.html', { root: __dirname + "/" });
+});
+
+server.listen(8080, "127.0.0.1", () => {
+    console.log(`Server started on http://${server.address().address}:${server.address().port}`);
 });

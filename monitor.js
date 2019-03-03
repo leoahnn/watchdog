@@ -21,25 +21,25 @@ class Monitor {
         // detrigger warning if load is less than 1
         // for more than 2 min
         if (this.warn) {
-            if (data < this.threshold) {
+            if (data[0] < this.threshold) {
                 this.coolCounter++;
             } else {
                 this.coolCounter = 0;
             }
             if (this.coolCounter > this.interval) {
-                this.coolTime = Date.now()  
+                this.coolTime = data[1] 
                 this.warn = false
             } else {
                 this.warn = true
             }
         } else {
-            if (data > this.threshold) {
+            if (data[0] > this.threshold) {
                 this.warnCounter++;
             } else {
                 this.warnCounter = 0;
             }
             if (this.warnCounter > this.interval) {
-                this.warnTime = Date.now()  
+                this.warnTime = data[1]
                 this.warn = true
             } else {
                 this.warn = false
@@ -57,9 +57,7 @@ class Monitor {
         return JSON.stringify({
             "val": data[0],
             "timestamp": data[1],
-            "coolCount": this.coolCounter, 
             "coolTime": this.coolTime,
-            "warnCount": this.warnCounter, 
             "warnTime": this.warnTime,
             "warn": this.warn
         })
