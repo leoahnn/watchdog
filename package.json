@@ -9,9 +9,15 @@
     "jquery": "^3.3.1",
     "ws": "^6.1.4"
   },
-  "devDependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "author": "Leo Ahnn",
